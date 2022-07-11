@@ -1,0 +1,31 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - color/**
+
+jobs:
+
+  build_new:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      
+    - name: Building the Docker image
+      run:
+        echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+        docker build . --tag quay.io/codefresh_sa/color-service:${SHORT_SHA}
+
+    - name: Push To Registry
+      uses: redhat-actions/push-to-registry@v2.5.1
+      with:
+        image: color-service
+        tags: ${{ github.sha }}
+        registry: quay.io
+        username: codefresh_sa
+        password: ${{ secrets.docker_registry_password }}
