@@ -19,3 +19,4 @@ COPY blue.png /usr/share/nginx/html/
 ENV IMAGE=$IMAGE_ARG
 ENV COLOR1 orange
 
+
