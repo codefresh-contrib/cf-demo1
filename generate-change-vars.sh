@@ -50,7 +50,7 @@ function choose_commiter() {
     declare -a NAME_LIST=("cf-sa-demo")
     declare -a EMAIL_LIST=("salesdemosa@codefresh.io")
     # COMMITTER_INDEX=$(($RANDOM % 2))
-    COMMITTER_INDEX=1
+    COMMITTER_INDEX=0
     export COMMITTER_NAME=${NAME_LIST[COMMITTER_INDEX]}
     export COMMITTER_EMAIL=${EMAIL_LIST[COMMITTER_INDEX]}
     cf_export COMMITTER_NAME || true
