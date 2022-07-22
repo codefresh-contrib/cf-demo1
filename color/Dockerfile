@@ -8,7 +8,7 @@ LABEL cf_account="cf-demo1"
 
 # Notes: color/ is the path used for this app's K8s ingress URL rewrite.
 #        Remove color/ when testing this image locally or running without URL rewriting.
-ARG IMAGE_ARG=color/green.png
+ARG IMAGE_ARG=green.png
 
 COPY 05-interpolation.sh /docker-entrypoint.d/
 COPY index.html /usr/share/nginx/html/
