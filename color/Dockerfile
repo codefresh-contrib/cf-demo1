@@ -1,6 +1,6 @@
 # quay.io/codefresh_sa/color-service
-# docker build -t quay.io/codefresh_sa/color-service:hat .
-# docker build -t quay.io/codefresh_sa/color-service:scarf . --build-arg IMAGE_ARG=color/img_scarf.jpeg
+# docker build -t quay.io/codefresh_sa/color:hat .
+# docker build -t quay.io/codefresh_sa/color:scarf . --build-arg IMAGE_ARG=img_scarf.jpeg
 
 FROM nginx:1.22-alpine
 
